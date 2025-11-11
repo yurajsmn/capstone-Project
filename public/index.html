@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Hinglish Review Sentiment Analyzer</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>🔍 Hinglish Review Sentiment</h1>
+  <p>AI-powered sentiment analysis for Hindi-English app reviews</p>
+</header>
+
+<section id="form-section">
+  <h2>📱 Analyze App Reviews</h2>
+  <form id="scrape-form">
+    <div class="row">
+      <label>App ID or Name
+        <input id="app-id" name="appId" placeholder="e.g., PhonePe, com.phonepe.app" required />
+      </label>
+      <label>Max Reviews
+        <input id="max" name="max" type="number" min="1" max="500" value="50" />
+      </label>
+    </div>
+    <div class="row">
+      <label>
+        <input id="use-model" type="checkbox" name="useModel" />
+        Use Python ML Model
+      </label>
+      <label>
+        <input id="absa" type="checkbox" name="absa" checked />
+        Extract Aspects (ABSA)
+      </label>
+    </div>
+    <button id="scrape-btn" type="submit">🚀 Fetch & Analyze</button>
+  </form>
+  
+  <div id="alert" class="alert error" hidden></div>
+  <div id="loading" hidden>Fetching and analyzing reviews...</div>
+  <div id="warning-box" class="alert warning" hidden></div>
+</section>
+
+<section id="scrape-result" hidden>
+  <h2>📊 Analysis Results</h2>
+  <div id="note" hidden></div>
+  
+  <div class="summary-stats">
+    <div>
+      <strong>Total Reviews</strong>
+      <span id="total-count">0</span>
+    </div>
+    <div>
+      <strong>😊 Positive</strong>
+      <span id="pos-count">0</span>
+    </div>
+    <div>
+      <strong>😐 Neutral</strong>
+      <span id="neu-count">0</span>
+    </div>
+    <div>
+      <strong>😞 Negative</strong>
+      <span id="neg-count">0</span>
+    </div>
+  </div>
+  
+  <div id="overall-summary" hidden></div>
+  
+  <button id="copy-btn">📋 Copy JSON</button>
+  <pre id="scrape-json"></pre>
+</section>
+
+<footer>
+  <small>💡 Powered by CNN+BiLSTM Deep Learning | Built for Hinglish Sentiment Analysis</small>
+</footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
