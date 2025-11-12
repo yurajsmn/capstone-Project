@@ -1,2 +1,0 @@
-const meta = await gplay.app({ appId: 'com.whatsapp' });
-console.log(meta.title, meta.installs, meta.score);
